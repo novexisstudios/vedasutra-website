@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEDASUTRA Foundation – Brand Identity Kit</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;600&display=swap');
+
+        :root {
+            --gear-grey: #5C6370;
+            --deep-blue: #1A3A6B;
+            --amber: #D4900A;
+            --text-dark: #2E3A4E;
+            --text-sub: #5C6370;
+            --sanskrit-gold: #C8860A;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #FFFFFF;
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* ---- HEADER ---- */
+        .page-header {
+            background: #1A3A6B;
+            padding: 32px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .page-header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+        }
+
+        .page-header p {
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.4);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* ---- LAYOUT ---- */
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 44px 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            background: #FFFFFF;
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 3px;
+            overflow: hidden;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        .section-label {
+            background: #2E3A4E;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding: 9px 22px;
+        }
+
+        .section-body {
+            padding: 56px 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 48px;
+        }
+
+        .section-body.left {
+            justify-content: flex-start;
+        }
+
+        .variant-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 8.5px;
+            letter-spacing: 2px;
+            color: #000000;
+            text-transform: uppercase;
+            text-align: center;
+            margin-top: 14px;
+        }
+
+        /* ---- TWO COL ---- */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+
+        /* ---- COLOUR PALETTE ---- */
+        .palette-row {
+            display: flex;
+            padding: 40px 48px;
+            gap: 14px;
+        }
+
+        .swatch {
+            flex: 1;
+            padding: 22px 16px;
+            border-radius: 2px;
+        }
+
+        .swatch-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .swatch-hex {
+            font-size: 11px;
+            opacity: 0.65;
+        }
+
+        .swatch-role {
+            font-size: 9.5px;
+            margin-top: 8px;
+            opacity: 0.6;
+        }
+
+        /* ---- TYPOGRAPHY ---- */
+        .type-body {
+            padding: 40px 48px;
+        }
+
+        .type-row {
+            padding: 18px 0;
+            border-bottom: 1px solid #F0F0F0;
+        }
+
+        .type-row:last-child {
+            border-bottom: none;
+        }
+
+        .type-meta {
+            font-size: 9px;
+            letter-spacing: 2px;
+            color: #BBB;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* ---- SIZE VARIANTS ---- */
+        .sizes-row {
+            display: flex;
+            align-items: flex-end;
+            gap: 40px;
+            padding: 48px;
+            flex-wrap: wrap;
+        }
+
+        /* ---- FOOTER ---- */
+        footer {
+            background: #1A3A6B;
+            color: rgba(255, 255, 255, 0.35);
+            font-size: 9.5px;
+            letter-spacing: 2.5px;
+            text-align: center;
+            padding: 18px;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* ==============================
+           PRINT STYLES
+        ============================== */
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 10mm 12mm;
+            }
+
+            html,
+            body {
+                background: #FFFFFF !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            body {
+                font-size: 10px;
+            }
+
+            /* Remove screen shadow/box-shadows for print */
+            .section-card {
+                box-shadow: none;
+                border: 1px solid #E0E0E0;
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            /* Force background colours to print */
+            .page-header {
+                background: #1A3A6B !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .section-label {
+                background: #2E3A4E !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            footer {
+                background: #1A3A6B !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            /* Don't break swatches */
+            .palette-row {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            /* Scale down the sizes row to fit on one page */
+            .sizes-row {
+                gap: 20px;
+                padding: 28px;
+            }
+
+            /* Section spacing */
+            .container {
+                gap: 14px;
+                padding: 20px 12px;
+            }
+
+            .section-body {
+                padding: 32px 36px;
+                gap: 32px;
+            }
+
+            /* Keep header and footer visible */
+            .page-header,
+            footer {
+                display: flex !important;
+                visibility: visible !important;
+            }
+
+            /* Avoid widows and orphans */
+            p,
+            td,
+            li {
+                orphans: 3;
+                widows: 3;
+            }
+
+            /* Reduce large font sizes slightly for print */
+            .section-body div[style*="font-size:36px"],
+            .section-body div[style*="font-size:34px"] {
+                font-size: 28px !important;
+            }
+
+            /* Reduce the 500px, 400px, 300px logo instances in size test */
+            .sizes-row img[width="500"] {
+                width: 120px !important;
+                height: 120px !important;
+            }
+
+            .sizes-row img[width="400"] {
+                width: 100px !important;
+                height: 100px !important;
+            }
+
+            .sizes-row img[width="300"] {
+                width: 80px !important;
+                height: 80px !important;
+            }
+
+            .sizes-row img[width="200"] {
+                width: 60px !important;
+                height: 60px !important;
+            }
+
+            /* Anatomy section: keep image+table together */
+            .section-body[style*="align-items:flex-start"] {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            /* Add a bit of page break breathing room between big sections */
+            .section-card+.section-card {
+                margin-top: 4px;
+            }
+
+            /* Section 07 (sizes) - allow page break before since it's wide */
+            .section-card:nth-child(7) {
+                break-before: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page-header">
+        <div>
+            <h1>VEDASUTRA Foundation</h1>
+            <p style="margin-top:5px">Brand Identity System &nbsp;·&nbsp; Logo Kit</p>
+        </div>
+        <p>2024 &nbsp;·&nbsp; Version 1.0</p>
+    </div>
+
+    <div class="container">
+
+        <!-- =============================================
+       01 — SYMBOL ONLY (multiple colourways)
+  ============================================= -->
+        <div class="section-card">
+            <div class="section-label">01 — Primary Symbol — Colour Variants</div>
+            <div class="section-body">
+
+                <!-- FULL COLOUR -->
+                <div>
+                    <img src="/vedsutra.png" alt="vedsutra-logo" width="150" height="150">
+                    <div class="variant-label">Full Colour</div>
+                </div>
+
+                <!-- ON BLUE BACKGROUND -->
+                <div style="background:#1A3A6B;padding:24px;border-radius:3px">
+                    <img src="vedsutra-bluebg.png" alt="" srcset="" width="150" height="150">
+                    <div class="variant-label" style="color:rgb(255, 255, 255)">On Blue BG</div>
+                </div>
+
+                <!-- BLACK & WHITE -->
+                <div>
+                    <img src="vedsutra-bw.png" alt="" srcset="" width="150" height="150">
+                    <div class="variant-label">Black &amp; White</div>
+                </div>
+
+                <!-- MONOCHROME WHITE ON DARK -->
+                <div style="background:#1C2128;padding:24px;border-radius:3px">
+                    <img src="vedsutra-whitedark.png" alt="" srcset="" width="150" height="150">
+                    <div class="variant-label" style="color:rgb(255, 255, 255)">White on Dark</div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- =============================================
+       02 — HORIZONTAL LOCKUP (primary logo)
+  ============================================= -->
+        <div class="section-card">
+            <div class="section-label">02 — Primary Horizontal Lockup</div>
+            <div class="section-body" style="justify-content:flex-start; padding:60px 72px;">
+                <img src="vedsutra.png" alt="" srcset="" width="150" height="150">
+                <div>
+                    <div
+                        style="font-family:'Montserrat',sans-serif; font-size:34px; font-weight:800; color:#2E3A4E; letter-spacing:0.5px; line-height:1">
+                        VEDASUTRA Foundation</div>
+                    <div
+                        style="font-family:'Open Sans',sans-serif; font-size:13px; color:#5C6370; margin-top:6px; letter-spacing:0.3px">
+                        Empowering Skill. Advancing Technology. Upholding Ethics.</div>
+                    <div
+                        style="font-family:'Open Sans',sans-serif; font-size:12px; color:#C8860A; margin-top:4px; font-style:italic">
+                        "कौशलम् एव संस्कारः"</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =============================================
+       03 — FULL LOGO WITH TAGLINE
+  ============================================= -->
+        <div class="section-card">
+            <div class="section-label">03 — Full Logo with Tagline &amp; Sanskrit Motto</div>
+            <div class="section-body" style="justify-content:flex-start; padding:60px 72px;">
+                <img src="vedsutra.png" alt="" srcset="" width="150" height="150">
+                <div>
+                    <div
+                        style="font-family:'Montserrat',sans-serif; font-size:36px; font-weight:800; color:#2E3A4E; letter-spacing:0.5px; line-height:1">
+                        VEDASUTRA Foundation</div>
+                    <div style="font-family:'Open Sans',sans-serif; font-size:13.5px; color:#5C6370; margin-top:8px;">
+                        Empowering Skill. Advancing Technology. Upholding Ethics.</div>
+                    <div
+                        style="font-family:'Open Sans',sans-serif; font-size:12.5px; color:#C8860A; margin-top:5px; font-style:italic">
+                        "कौशलम् एव संस्कारः"</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =============================================
+       04 — BLACK & WHITE VERSION
+  ============================================= -->
+        <div class="section-card">
+            <div class="section-label">04 — Black &amp; White Version</div>
+            <div class="section-body" style="justify-content:flex-start; padding:60px 72px;">
+                <img src="vedsutra-bw.png" alt="" srcset="" width="150" height="150">
+                <div>
+                    <div
+                        style="font-family:'Montserrat',sans-serif; font-size:36px; font-weight:800; color:#111; letter-spacing:0.5px; line-height:1">
+                        VEDASUTRA Foundation</div>
+                    <div style="font-family:'Open Sans',sans-serif; font-size:13.5px; color:#444; margin-top:8px;">
+                        Empowering Skill. Advancing Technology. Upholding Ethics.</div>
+                    <div
+                        style="font-family:'Open Sans',sans-serif; font-size:12.5px; color:#333; margin-top:5px; font-style:italic">
+                        "कौशलम् एव संस्कारः"</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =============================================
+       05 — MONOCHROME (WHITE ON DARK)
+  ============================================= -->
+        <div class="section-card">
+            <div class="section-label">05 — Monochrome — White on Dark</div>
+            <div class="section-body" style="justify-content:flex-start; padding:60px 72px; background:#1C2128;">
+                <img src="vedsutra-whitedark.png" alt="" srcset="" width="150" height="150">
+                <div>
+                    <div
+                        style="font-family:'Montserrat',sans-serif; font-size:36px; font-weight:800; color:white; letter-spacing:0.5px; line-height:1">
+                        VEDASUTRA Foundation</div>
+                    <div
+                        style="font-family:'Open Sans',sans-serif; font-size:13.5px; color:rgba(255,255,255,0.6); margin-top:8px;">
+                        Empowering Skill. Advancing Technology. Upholding Ethics.</div>
+                    <div
+                        style="font-family:'Open Sans',sans-serif; font-size:12.5px; color:#D4900A; margin-top:5px; font-style:italic">
+                        "कौशलम् एव संस्कारः"</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =============================================
+       06 — REVERSED ON BLUE
+  ============================================= -->
+        <div class="section-card">
+            <div class="section-label">06 — Reversed — White on Deep Blue</div>
+            <div class="section-body" style="justify-content:flex-start; padding:60px 72px; background:#1A3A6B;">
+                <img src="vedsutra-bluebg.png" alt="" srcset="" width="150" height="150">
+                <div>
+                    <div
+                        style="font-family:'Montserrat',sans-serif; font-size:36px; font-weight:800; color:white; letter-spacing:0.5px; line-height:1">
+                        VEDASUTRA Foundation</div>
+                    <div
+                        style="font-family:'Open Sans',sans-serif; font-size:13.5px; color:rgba(255,255,255,0.7); margin-top:8px;">
+                        Empowering Skill. Advancing Technology. Upholding Ethics.</div>
+                    <div
+                        style="font-family:'Open Sans',sans-serif; font-size:12.5px; color:#D4900A; margin-top:5px; font-style:italic">
+                        "कौशलम् एव संस्कारः"</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =============================================
+       07 — SIZE / SCALABILITY VARIANTS
+  ============================================= -->
+        <div class="section-card">
+            <div class="section-label">07 — Scalability Test — Symbol at Various Sizes</div>
+            <div class="sizes-row">
+                <div style="text-align:center">
+                    <img src="vedsutra.png" alt="" width="16" height="16">
+                    <div style="font-size:8px;color:#aaa;margin-top:6px;font-family:Montserrat,sans-serif">16px</div>
+                </div>
+                <div style="text-align:center">
+                    <img src="vedsutra.png" alt="" width="32" height="32">
+                    <div style="font-size:8px;color:#aaa;margin-top:6px;font-family:Montserrat,sans-serif">32px</div>
+                </div>
+                <div style="text-align:center">
+                    <img src="vedsutra.png" alt="" width="64" height="64">
+                    <div style="font-size:8px;color:#aaa;margin-top:6px;font-family:Montserrat,sans-serif">64px</div>
+                </div>
+                <div style="text-align:center">
+                    <img src="vedsutra.png" alt="" width="128" height="128">
+                    <div style="font-size:8px;color:#aaa;margin-top:6px;font-family:Montserrat,sans-serif">128px</div>
+                </div>
+                <div style="text-align:center">
+                    <img src="vedsutra.png" alt="" width="200" height="200">
+                    <div style="font-size:8px;color:#aaa;margin-top:6px;font-family:Montserrat,sans-serif">200px</div>
+                </div>
+                <div style="text-align:center">
+                    <img src="vedsutra.png" alt="" width="300" height="300">
+                    <div style="font-size:8px;color:#aaa;margin-top:6px;font-family:Montserrat,sans-serif">300px</div>
+                </div>
+                <div style="text-align:center">
+                    <img src="vedsutra.png" alt="" width="400" height="400">
+                    <div style="font-size:8px;color:#aaa;margin-top:6px;font-family:Montserrat,sans-serif">400px</div>
+                </div>
+                <div style="text-align:center">
+                    <img src="vedsutra.png" alt="" width="500" height="500">
+                    <div style="font-size:8px;color:#aaa;margin-top:6px;font-family:Montserrat,sans-serif">500px</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =============================================
+       08 — COLOUR PALETTE
+  ============================================= -->
+        <div class="section-card">
+            <div class="section-label">08 — Brand Colour Palette</div>
+            <div class="palette-row">
+                <div class="swatch" style="background:#5C6370;color:white">
+                    <div class="swatch-name">Gear Grey</div>
+                    <div class="swatch-hex">#5C6370</div>
+                    <div class="swatch-role">Industrial · Symbol Body</div>
+                </div>
+                <div class="swatch" style="background:#1A3A6B;color:white">
+                    <div class="swatch-name">Deep Blue</div>
+                    <div class="swatch-hex">#1A3A6B</div>
+                    <div class="swatch-role">Institutional · V Mark · Text</div>
+                </div>
+                <div class="swatch" style="background:#D4900A;color:#111">
+                    <div class="swatch-name">Amber Gold</div>
+                    <div class="swatch-hex">#D4900A</div>
+                    <div class="swatch-role">Accent · Swoosh · Sanskrit</div>
+                </div>
+                <div class="swatch" style="background:#2E3A4E;color:white">
+                    <div class="swatch-name">Navy Charcoal</div>
+                    <div class="swatch-hex">#2E3A4E</div>
+                    <div class="swatch-role">Primary Wordmark Text</div>
+                </div>
+                <div class="swatch" style="background:#F7F7F7;color:#333;border:1px solid #DDD">
+                    <div class="swatch-name">Off White</div>
+                    <div class="swatch-hex">#F7F7F7</div>
+                    <div class="swatch-role">Background · Clean Base</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =============================================
+       09 — TYPOGRAPHY
+  ============================================= -->
+        <div class="section-card">
+            <div class="section-label">09 — Typography System</div>
+            <div class="type-body">
+                <div class="type-row">
+                    <div class="type-meta">Brand Name — Display / Wordmark</div>
+                    <div
+                        style="font-family:'Montserrat',sans-serif; font-size:38px; font-weight:800; color:#2E3A4E; letter-spacing:0.5px">
+                        VEDASUTRA Foundation</div>
+                    <div
+                        style="font-size:10px;color:#BBB;margin-top:6px;font-family:Montserrat,sans-serif;letter-spacing:1.5px">
+                        MONTSERRAT EXTRABOLD · 800 · Mixed Case</div>
+                </div>
+                <div class="type-row">
+                    <div class="type-meta">Tagline — Body / Supporting Text</div>
+                    <div
+                        style="font-family:'Open Sans',sans-serif; font-size:15px; font-weight:400; color:#5C6370; letter-spacing:0.3px">
+                        Empowering Skill. Advancing Technology. Upholding Ethics.</div>
+                    <div
+                        style="font-size:10px;color:#BBB;margin-top:6px;font-family:Montserrat,sans-serif;letter-spacing:1.5px">
+                        OPEN SANS REGULAR · 400 · Sentence Case</div>
+                </div>
+                <div class="type-row">
+                    <div class="type-meta">Sanskrit Motto — Accent Italic</div>
+                    <div
+                        style="font-family:'Open Sans',sans-serif; font-size:15px; font-weight:400; color:#C8860A; font-style:italic">
+                        "कौशलम् एव संस्कारः"</div>
+                    <div
+                        style="font-size:10px;color:#BBB;margin-top:6px;font-family:Montserrat,sans-serif;letter-spacing:1.5px">
+                        OPEN SANS ITALIC · 400 · Amber Gold · Devanagari</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =============================================
+       10 — SYMBOL ANATOMY
+  ============================================= -->
+        <div class="section-card">
+            <div class="section-label">10 — Symbol Anatomy &amp; Design Logic</div>
+            <div class="section-body" style="align-items:flex-start; gap:60px; padding:48px;">
+                <img src="vedsutra.png" alt="" width="250" height="250">
+                <div style="flex:1; min-width:280px">
+                    <table style="width:100%;border-collapse:collapse;font-size:12.5px">
+                        <thead>
+                            <tr style="border-bottom:2px solid #eee">
+                                <td
+                                    style="padding:10px 8px;font-family:Montserrat,sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;color:#1A3A6B;text-transform:uppercase">
+                                    Element</td>
+                                <td
+                                    style="padding:10px 8px;font-family:Montserrat,sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;color:#1A3A6B;text-transform:uppercase">
+                                    Symbolism</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom:1px solid #F3F3F3">
+                                <td style="padding:11px 8px;font-weight:600;color:#5C6370">Gear (12-tooth)</td>
+                                <td style="padding:11px 8px;color:#777;font-size:12px">Industrial precision, structured
+                                    vocational training, mechanical discipline</td>
+                            </tr>
+                            <tr style="border-bottom:1px solid #F3F3F3">
+                                <td style="padding:11px 8px;font-weight:600;color:#5C6370">Grey colour</td>
+                                <td style="padding:11px 8px;color:#777;font-size:12px">Steel, industry, neutral
+                                    authority — non-partisan institutional tone</td>
+                            </tr>
+                            <tr style="border-bottom:1px solid #F3F3F3">
+                                <td style="padding:11px 8px;font-weight:600;color:#D4900A">Gold swoosh arc</td>
+                                <td style="padding:11px 8px;color:#777;font-size:12px">Continuous skill development,
+                                    growth momentum, flow of knowledge</td>
+                            </tr>
+                            <tr style="border-bottom:1px solid #F3F3F3">
+                                <td style="padding:11px 8px;font-weight:600;color:#1A3A6B">Blue V-checkmark</td>
+                                <td style="padding:11px 8px;color:#777;font-size:12px">VEDASUTRA initial, verified
+                                    achievement, upward ethical progress</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:11px 8px;font-weight:600;color:#5C6370">Centre hub</td>
+                                <td style="padding:11px 8px;color:#777;font-size:12px">Focus, convergence of skill
+                                    streams, institutional core identity</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>VEDASUTRA Foundation &nbsp;·&nbsp; Brand Identity Kit &nbsp;·&nbsp; Confidential &nbsp;·&nbsp; 2024</footer>
+
+</body>
+
+</html>
